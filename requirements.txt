@@ -1,1 +1,7 @@
-matplotlib==1.5.1
+installers/pip-cache/matplotlib-1.5.1-cp27-none-win32.whl
+installers/pip-cache/numpy-1.12.1-cp27-none-win32.whl
+installers/pip-cache/pyparsing-2.2.0-py2.py3-none-any.whl
+installers/pip-cache/python_dateutil-2.6.0-py2.py3-none-any.whl
+installers/pip-cache/pytz-2016.10-py2.py3-none-any.whl
+installers/pip-cache/cycler-0.10.0-py2.py3-none-any.whl
+installers/pip-cache/six-1.10.0-py2.py3-none-any.whl
