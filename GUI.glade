@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="upper">120</property>
+    <property name="value">6</property>
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkWindow" id="advancedWindow">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Advanced Settings</property>
+    <property name="default_width">300</property>
+    <property name="default_height">200</property>
+    <property name="deletable">False</property>
+    <child>
+      <object class="GtkLayout" id="layout2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="width">825</property>
+        <child>
+          <object class="GtkEntry" id="kText">
+            <property name="width_request">47</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Assumed value of the 0th term assuming all constants have been removed.</property>
+            <property name="invisible_char">●</property>
+            <property name="text" translatable="yes">0</property>
+            <property name="invisible_char_set">True</property>
+            <property name="caps_lock_warning">False</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">106</property>
+            <property name="y">32</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="width_request">100</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">k Value</property>
+          </object>
+          <packing>
+            <property name="x">13</property>
+            <property name="y">30</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label23">
+            <property name="width_request">101</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="xalign">0.50999999046325684</property>
+            <property name="yalign">0.47999998927116394</property>
+            <property name="label" translatable="yes">Decimal
+Precision</property>
+          </object>
+          <packing>
+            <property name="x">4</property>
+            <property name="y">61</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="precisionText">
+            <property name="width_request">47</property>
+            <property name="height_request">23</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Number of significant  figures to be stored in variables.</property>
+            <property name="invisible_char">●</property>
+            <property name="text" translatable="yes">132</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">105</property>
+            <property name="y">69</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label24">
+            <property name="width_request">94</property>
+            <property name="height_request">41</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Floating Point
+Error Tolerance</property>
+          </object>
+          <packing>
+            <property name="x">7</property>
+            <property name="y">103</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="toleranceText">
+            <property name="width_request">42</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">This value is subtracted to Decimal Precision and the resulting value will be used as the number of decimal places values are rounded off to.
+Example: Decimal Precision = 132 and Floating Point Error Tolerance = 6, means that the values are rounded off after 126 decimal places.</property>
+            <property name="invisible_char">●</property>
+            <property name="text" translatable="yes">6</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">106</property>
+            <property name="y">113</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="hideAdvancedButton">
+            <property name="label" translatable="yes">Hide Advanced Settings</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">145</property>
+            <property name="height_request">27</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Hide advanced settings window.</property>
+          </object>
+          <packing>
+            <property name="x">11</property>
+            <property name="y">164</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="computeSequenceButton">
+            <property name="label" translatable="yes">Compute: Sequence</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">119</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">167</property>
+            <property name="y">163</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow11">
+            <property name="width_request">118</property>
+            <property name="height_request">104</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="inputSequenceTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">170</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label2">
+            <property name="width_request">100</property>
+            <property name="height_request">32</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="yalign">0.46000000834465027</property>
+            <property name="label" translatable="yes">Input sequence
+*Alternative</property>
+          </object>
+          <packing>
+            <property name="x">180</property>
+            <property name="y">15</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="mainWindow">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Algorithm Analyzer Prototype</property>
+    <property name="default_width">825</property>
+    <property name="default_height">475</property>
+    <child>
+      <object class="GtkLayout" id="layout1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="width">825</property>
+        <child>
+          <object class="GtkButton" id="computeButton">
+            <property name="label" translatable="yes">Compute: Algorithm
+</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">204</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Compute for EPC approximations of the input algorithm.</property>
+          </object>
+          <packing>
+            <property name="x">21</property>
+            <property name="y">74</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label3">
+            <property name="width_request">69</property>
+            <property name="height_request">22</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">End Term</property>
+          </object>
+          <packing>
+            <property name="x">32</property>
+            <property name="y">22</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="endTermText">
+            <property name="width_request">116</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Ending term for the generated data.</property>
+            <property name="invisible_char">●</property>
+            <property name="text" translatable="yes">50</property>
+            <property name="caps_lock_warning">False</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">102</property>
+            <property name="y">21</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label4">
+            <property name="width_request">94</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Input algorithm</property>
+          </object>
+          <packing>
+            <property name="x">7</property>
+            <property name="y">49</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFileChooserButton" id="algoFileChooser">
+            <property name="width_request">116</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Choose algorithm file.</property>
+          </object>
+          <packing>
+            <property name="x">100</property>
+            <property name="y">48</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="width_request">97</property>
+            <property name="height_request">194</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="enlTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">e approximations not assuming log(n) factors.</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">235</property>
+            <property name="y">31</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow2">
+            <property name="width_request">95</property>
+            <property name="height_request">191</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="pnlTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">p approximations not assuming log(n) factors.</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">342</property>
+            <property name="y">34</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow3">
+            <property name="width_request">96</property>
+            <property name="height_request">189</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="cnlTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">c approximations not assuming log(n) factors.</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">448</property>
+            <property name="y">35</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow4">
+            <property name="width_request">93</property>
+            <property name="height_request">186</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="eTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">e approximations assuming log(n) factors.</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">235</property>
+            <property name="y">258</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow5">
+            <property name="width_request">94</property>
+            <property name="height_request">186</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="pTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">e approximations assuming log(n) factors.</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">343</property>
+            <property name="y">259</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow6">
+            <property name="width_request">92</property>
+            <property name="height_request">183</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="cTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">e approximations assuming log(n) factors.</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">453</property>
+            <property name="y">260</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label5">
+            <property name="width_request">97</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">enl approx.</property>
+          </object>
+          <packing>
+            <property name="x">234</property>
+            <property name="y">9</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label6">
+            <property name="width_request">94</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">pnl approx.</property>
+          </object>
+          <packing>
+            <property name="x">341</property>
+            <property name="y">10</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label7">
+            <property name="width_request">99</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">cnl approx.</property>
+          </object>
+          <packing>
+            <property name="x">448</property>
+            <property name="y">11</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label8">
+            <property name="width_request">101</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">p approx.</property>
+          </object>
+          <packing>
+            <property name="x">339</property>
+            <property name="y">238</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label9">
+            <property name="width_request">99</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">e approx.</property>
+          </object>
+          <packing>
+            <property name="x">233</property>
+            <property name="y">238</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label10">
+            <property name="width_request">103</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">c approx.</property>
+          </object>
+          <packing>
+            <property name="x">449</property>
+            <property name="y">239</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label11">
+            <property name="width_request">163</property>
+            <property name="height_request">21</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Frequency Count Sequence</property>
+          </object>
+          <packing>
+            <property name="x">44</property>
+            <property name="y">219</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label12">
+            <property name="width_request">190</property>
+            <property name="height_request">23</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Removed Constants Sequence (k)</property>
+          </object>
+          <packing>
+            <property name="x">30</property>
+            <property name="y">283</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow7">
+            <property name="width_request">178</property>
+            <property name="height_request">39</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">never</property>
+            <child>
+              <object class="GtkTextView" id="seqFreqCountTextView">
+                <property name="width_request">135</property>
+                <property name="height_request">26</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">35</property>
+            <property name="y">244</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow8">
+            <property name="width_request">174</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">never</property>
+            <child>
+              <object class="GtkTextView" id="seqRemovedConstantsTextView">
+                <property name="width_request">135</property>
+                <property name="height_request">26</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">36</property>
+            <property name="y">309</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label13">
+            <property name="width_request">71</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">hasLog</property>
+          </object>
+          <packing>
+            <property name="x">31</property>
+            <property name="y">362</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="hasLogText">
+            <property name="width_request">108</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Presence of a log(n) factor in the epc approximations
+hasLog = (L &gt;= NL)</property>
+            <property name="editable">False</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">101</property>
+            <property name="y">361</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="hasLogRatioText">
+            <property name="width_request">111</property>
+            <property name="height_request">22</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Ratio of terms closer to log over no log approximations.</property>
+            <property name="editable">False</property>
+            <property name="invisible_char">●</property>
+            <property name="invisible_char_set">True</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">102</property>
+            <property name="y">420</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label15">
+            <property name="width_request">69</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">L:NL ratio</property>
+          </object>
+          <packing>
+            <property name="x">31</property>
+            <property name="y">422</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label16">
+            <property name="width_request">257</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="yalign">0.49000000953674316</property>
+            <property name="label" translatable="yes">Limit Ratio (Frequency Counts/EPC approx.)</property>
+          </object>
+          <packing>
+            <property name="x">546</property>
+            <property name="y">16</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow9">
+            <property name="width_request">246</property>
+            <property name="height_request">187</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="limitRatiosTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">554</property>
+            <property name="y">40</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label17">
+            <property name="width_request">95</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Converges</property>
+          </object>
+          <packing>
+            <property name="x">561</property>
+            <property name="y">235</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label18">
+            <property name="width_request">92</property>
+            <property name="height_request">21</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Converges %</property>
+          </object>
+          <packing>
+            <property name="x">560</property>
+            <property name="y">258</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label19">
+            <property name="width_request">100</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Conv.:Div. ratio</property>
+          </object>
+          <packing>
+            <property name="x">561</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="convergesText">
+            <property name="width_request">132</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Convergence of the Limit Ratios
+Convergence = (Conv. &gt;= Div.)</property>
+            <property name="editable">False</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">659</property>
+            <property name="y">233</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="convergesPercentText">
+            <property name="width_request">133</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Percentage of terms appearing to be convergent.</property>
+            <property name="editable">False</property>
+            <property name="invisible_char">●</property>
+            <property name="invisible_char_set">True</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">659</property>
+            <property name="y">257</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="convergesRatioText">
+            <property name="width_request">134</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Ratio of terms appearing to be convergent over divergent.</property>
+            <property name="editable">False</property>
+            <property name="invisible_char">●</property>
+            <property name="invisible_char_set">True</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">658</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow10">
+            <property name="width_request">184</property>
+            <property name="height_request">127</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="outputSummaryTextView">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">570</property>
+            <property name="y">317</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label20">
+            <property name="width_request">113</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">OUTPUT</property>
+          </object>
+          <packing>
+            <property name="x">601</property>
+            <property name="y">300</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="graphButton">
+            <property name="label" translatable="yes">Graph
+</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">66</property>
+            <property name="height_request">41</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Graph Frequency Count with EPC approximations.</property>
+          </object>
+          <packing>
+            <property name="x">154</property>
+            <property name="y">174</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label21">
+            <property name="width_request">73</property>
+            <property name="height_request">35</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="xalign">0.47999998927116394</property>
+            <property name="label" translatable="yes">Input F(n)
+*Alternative</property>
+          </object>
+          <packing>
+            <property name="x">20</property>
+            <property name="y">106</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="functionText">
+            <property name="width_request">121</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Use a function to generate data.</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">92</property>
+            <property name="y">114</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="computeFunctionButton">
+            <property name="label" translatable="yes">Compute: F(n)</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">201</property>
+            <property name="height_request">23</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Compute EPC approximations for the function.</property>
+          </object>
+          <packing>
+            <property name="x">21</property>
+            <property name="y">142</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="viewInputButton">
+            <property name="label" translatable="yes">View
+input</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">67</property>
+            <property name="height_request">42</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">View input algorithm.</property>
+          </object>
+          <packing>
+            <property name="x">81</property>
+            <property name="y">172</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSpinButton" id="roundOffSpinButton">
+            <property name="width_request">37</property>
+            <property name="height_request">22</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Number of decimal places to round off.</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">False</property>
+            <property name="secondary_icon_sensitive">False</property>
+            <property name="adjustment">adjustment1</property>
+            <property name="numeric">True</property>
+          </object>
+          <packing>
+            <property name="x">757</property>
+            <property name="y">369</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label22">
+            <property name="width_request">42</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Round
+off to</property>
+          </object>
+          <packing>
+            <property name="x">758</property>
+            <property name="y">332</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="showAdvancedButton">
+            <property name="label" translatable="yes">Advanced
+Settings</property>
+            <property name="use_action_appearance">False</property>
+            <property name="width_request">67</property>
+            <property name="height_request">43</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Opens advanced settings window which contains the parameters: startTerm, k, decimal precision and tolerance.</property>
+          </object>
+          <packing>
+            <property name="x">8</property>
+            <property name="y">171</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label14">
+            <property name="width_request">65</property>
+            <property name="height_request">23</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">hasLog %</property>
+          </object>
+          <packing>
+            <property name="x">31</property>
+            <property name="y">390</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="hasLogPercentText">
+            <property name="width_request">108</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Percentage of terms closer to log approximations.</property>
+            <property name="editable">False</property>
+            <property name="invisible_char">●</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="secondary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">True</property>
+            <property name="secondary_icon_sensitive">True</property>
+          </object>
+          <packing>
+            <property name="x">103</property>
+            <property name="y">390</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
