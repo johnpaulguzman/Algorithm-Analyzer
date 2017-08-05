@@ -1,4 +1,4 @@
-def f(n): #3n+1
-    for i in range(0 ,n):
+def f(n):
+    for i in range(n):
         x=i+1
         print x

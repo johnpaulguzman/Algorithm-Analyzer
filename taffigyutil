@@ -1,0 +1,65 @@
+def taggify(expr):
+    new_str = ""
+    grouping_counter = 0
+    for s in expr:
+        if s == "(":
+            grouping_counter += 1
+            new_str += "REP" + str(grouping_counter) + s
+        elif s == ")":
+            new_str += "REP" + str(grouping_counter) + s
+            grouping_counter -= 1
+        else:
+            new_str += s
+    return new_str
+
+
+def tag_replace(expr):
+    tags = {
+        "REP1": r"\Bigg",
+        "REP2": r"\bigg",
+        "REP3": r"\Big",
+        "REP4": r"\big",
+        "REP5": "", "REP6": "",
+    }
+    for k, v in tags.items(): expr = expr.replace(k, v)
+    return expr
+
+def rtag(expr):
+    string = tag_replace(taggify(expr))
+    print(string)
+    return string
+
+expr = r"""
+E=exp(((log(y)-log(z))(log(a_x)-log(a_y)+log(ln(y)) \\
+-log(ln(x)))-(log(x)-log(y))\times(log(a_y)-log(a_z) \\
++log(ln(z))-log(ln(y)))) \\
+\div((log(x)-log(y))(z-y)-(log(y)-log(z))(y-x)))
+"""
+
+taggify(expr)
+
+\onecolumn
+\begin{eqnarray}
+F(n)
+\\ = 4 + \sum_{i=0}^{n-1}(2+F(i)+F(n-i-1))
+\\ * = 4 + 2(n) + 2 \sum_{i=0}^{n-1} F(i)
+\\ = 4 + 2(n) + 2 F(n-1) + 2 \sum_{i=0}^{n-2} F(i)
+\\ = 4 + 2(n) + 2 (4 + 2(n-1) + 2 \sum_{i=0}^{n-2} F(i)) + 2 \sum_{i=0}^{n-2} F(i)
+\\ = (4+2(4-2*1)) + (2+2*2)n + (2*2+2)\sum_{i=0}^{n-2} F(i)
+\\ * = 8 + 6 (n) + 6 \sum_{i=0}^{n-2} F(i)
+\\ = 8 + 6 (n) + 6 F(n-2) + 6 \sum_{i=0}^{n-3} F(i)
+\\ = 8 + 6 (n) + 6 (4 + 2(n-2) + 2 \sum_{i=0}^{n-3} F(i)) + 6 \sum_{i=0}^{n-3} F(i)
+\\ = (8+6(4-2*2)) + (6+6*2)n + (6*2+6)\sum_{i=0}^{n-3} F(i)
+\\ * = 8 + 18 n + 18 \sum_{i=0}^{n-3} F(i)
+\\ = 8 + 18 n + 18 F(n-3) + 18 \sum_{i=0}^{n-4} F(i)
+\\ = 8 + 18 n + 18 (4 + 2(n-3) + 2 \sum_{i=0}^{n-4} F(i)) + 18 \sum_{i=0}^{n-4} F(i)
+\\ = (8+18(4-2*3)) + (18+18*2)n + (18*2+18)\sum_{i=0}^{n-4} F(i)
+\\ * = -28 + 54 n + 54 \sum_{i=0}^{n-4} F(i)
+\\ ** = (4+\sum_{i=1}^k((2) (3^{i-1}) (4-2i))) + (2 (3^k))n + (2 (3^k)) * \sum_{i=0}^{n-k-1} F(i)
+\\ ** = 3^k (-2 k + 2 n + 5 + 2 \sum_{i=0}^{n-k-1} F(i)) - 1
+\\ ** n-k-1 = 0, k=n-1
+\\ *** 3^{n-1} (-2 (n-1) + 2 n + 5 + 2 \sum_{i=0}^{0} F(i)) - 1
+\\ *** 3^n (1/3) (11) -1
+\\crude catalan calculations
+\end{eqnarray}
+\twocolumn

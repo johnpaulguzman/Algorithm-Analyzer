@@ -4,11 +4,13 @@ import gtk
 import os
 from matplotlib.pyplot import plot, xlabel, ylabel, title, legend, show
 
+current_directory = os.path.split(os.path.abspath(__file__))[0]
+
 class GUI:
     def __init__(self):
         self.builder = gtk.Builder()
-        self.builder.add_from_file(os.getcwd() + "\\GUI.glade")
-        self.builder.get_object("algoFileChooser").set_current_folder(os.getcwd()+"\\experiments")
+        self.builder.add_from_file(current_directory + "\\GUI.glade")
+        self.builder.get_object("algoFileChooser").set_current_folder(current_directory + "\\experiments")
         self.builder.get_object("mainWindow").connect("destroy", gtk.main_quit)
         
     def addListener(self, widgetName, eventClass, action):

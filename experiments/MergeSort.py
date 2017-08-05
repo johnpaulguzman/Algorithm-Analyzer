@@ -1,5 +1,4 @@
 def merge_sort(items):
-    """ Implementation of mergesort """
     if len(items) > 1:
         mid = len(items) // 2        # Determine the midpoint and split
         left = items[0:mid]
@@ -25,5 +24,5 @@ def merge_sort(items):
                 r += 1
 
 def f(n): #merge sort worst case
-    x = range(n,0,-1) #range(first element, last element+1, step between)
+    x = range(n,0,-1)
     merge_sort(x)

@@ -1,5 +1,4 @@
 def quick_sort(items):
-    """ Implementation of quick sort """
     if len(items) > 1:
         pivot_index = 0
         smaller_items = []
@@ -14,6 +13,6 @@ def quick_sort(items):
         quick_sort(larger_items)
         items[:] = smaller_items + [items[pivot_index]] + larger_items
 
-def f(n): #bubble sort worst case
-    x = range(n,0,-1) #range(first element, last element+1, step between)
+def f(n): #quick_sort sort worst case
+    x = range(n,0,-1)
     quick_sort(x)

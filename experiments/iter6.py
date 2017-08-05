@@ -1,5 +1,5 @@
-def f(n):#n^2+2n+1
-    for i in range(0 ,n):
+def f(n):
+    for i in range(n):
         sum_to_i=0
-        for j in range(0, i):
+        for j in range(i):
             sum_to_i+=i
