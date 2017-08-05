@@ -18,7 +18,8 @@ def pow(base, exponent):
 
 class Experimenter:
     def __init__(self):
-        sys.setrecursionlimit(sys.maxint)
+	pass
+        # sys.setrecursionlimit(sys.maxint)
         
     def inputParameters(self, algoFilePath, endTerm, precision):
         self.algoFilePath = algoFilePath
@@ -62,15 +63,15 @@ class Experimenter:
                noIndentLine.startswith("while ") or noIndentLine.startswith("while(")):
                 augmentedFileString += [makeSpace(lineIndentAmount+4) +
                                         "freqCount += 1"]
-        fileDirectory = self.algoFilePath.split("\\")
+        fileDirectory = self.algoFilePath.split("/")
         directoryLength = len(fileDirectory)
-        directoryPath = "\\".join(fileDirectory[0:-1]) + "\\preprocessed\\"
+        directoryPath = "\\".join(fileDirectory[0:-1]) + "/preprocessed/"
         #Create folder if none currently exists
         if not os.path.exists(directoryPath):
             os.makedirs(directoryPath)
         #Create and store augmented algorithm in new file
         self.augmentedAlgoFilePath = (directoryPath + "preprocessed_" +
-                                      "\\".join(fileDirectory[directoryLength-1:directoryLength]))
+                                      "/".join(fileDirectory[directoryLength-1:directoryLength]))
         with open(self.augmentedAlgoFilePath, "w") as augmentedFile:
             for augmentedLine in augmentedFileString:
                 print >> augmentedFile, augmentedLine

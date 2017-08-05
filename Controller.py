@@ -81,6 +81,32 @@ class Controller:
         self.gui.setText("limitRatiosTextView", self.dataProcessor.limitRatios)
         self.roundOffSummary(self.gui.builder.get_object("roundOffSpinButton"))
         print "Finished!"
+###############################################################################
+        import sys
+        import ntpath
+        from contextlib import contextmanager
+        from pprint import pprint
+
+        def path_leaf(path):
+            head, tail = ntpath.split(path)
+            return tail or ntpath.basename(head)
+
+        @contextmanager
+        def stdout_redirected(new_stdout):
+            save_stdout = sys.stdout
+            sys.stdout = new_stdout
+            try:
+                yield None
+            finally:
+                sys.stdout = save_stdout
+
+        data_name = "data_" + path_leaf(self.gui.builder.get_object("algoFileChooser").get_preview_filename())
+        data_dict = self.dataProcessor.__dict__
+        with open(data_name + ".txt", "a") as f:
+            with stdout_redirected(f): # TODO add csv output
+                pprint(data_dict)                
+        import code; code.interact(local=dict(globals(), **locals()))
+###############################################################################
     
     def graph(self, widget):
         try:

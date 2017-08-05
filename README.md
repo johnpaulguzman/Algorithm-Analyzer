@@ -1,6 +1,6 @@
 Installation:
 0. Refer to installers directory
-1. Install asdasd2.7.10 (win32 bit)
+1. Install Python 2.7.10 (win32 bit)
 2. Install PyGTK 2.24.2 (win32 bit)
 3. Install Python packages in requirements.txt by running:
   pip install -r requirements.txt --ignore-installed
