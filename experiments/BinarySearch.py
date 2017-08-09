@@ -14,5 +14,4 @@ def binarySearch(alist, item):
     return -1
 
 def f(n):
-    x = range(0,n,1)
-    binarySearch(x, n-1)
+    binarySearch(range(n), n-1)

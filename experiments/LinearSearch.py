@@ -5,5 +5,4 @@ def linearSearch(alist, item):
     return -1
 
 def f(n):
-    x = range(0,n,1)
-    linearSearch(x, n-1)
+    linearSearch(range(n), n-1)

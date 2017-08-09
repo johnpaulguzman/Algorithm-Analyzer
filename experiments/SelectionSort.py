@@ -1,11 +1,10 @@
-def selection_sort(alist):
-    for fillslot in range(len(alist)-1,0,-1):
-        positionOfMax=0
-        for location in range(1,fillslot+1):
-            if alist[location]>alist[positionOfMax]:
-                positionOfMax = location
-        alist[fillslot], alist[positionOfMax] = alist[positionOfMax], alist[fillslot]
+def selection_sort(lst):
+    for slot in range(len(lst)-1,0,-1):
+        max_idx=0
+        for idx in range(1,slot+1):
+            if lst[idx]>lst[max_idx]:
+                max_idx = idx
+        lst[slot], lst[max_idx] = lst[max_idx], lst[slot]
 
 def f(n): #selection sort worst case
-    x = range(n)
-    selection_sort(x)
+    selection_sort(range(n))

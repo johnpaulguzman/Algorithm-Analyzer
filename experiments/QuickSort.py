@@ -11,8 +11,8 @@ def quick_sort(items):
                     larger_items.append(val)
         quick_sort(smaller_items)
         quick_sort(larger_items)
-        items[:] = smaller_items + [items[pivot_index]] + larger_items
+        items[:] = (smaller_items+
+            [items[pivot_index]]+larger_items)
 
 def f(n): #quick_sort sort worst case
-    x = range(n,0,-1)
-    quick_sort(x)
+    quick_sort(range(n,0,-1))

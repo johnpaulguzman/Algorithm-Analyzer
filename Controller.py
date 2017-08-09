@@ -81,6 +81,61 @@ class Controller:
         self.gui.setText("limitRatiosTextView", self.dataProcessor.limitRatios)
         self.roundOffSummary(self.gui.builder.get_object("roundOffSpinButton"))
         print "Finished!"
+###############################################################################
+        """ testing codes
+        import sys
+        import ntpath
+        from contextlib import contextmanager
+        from pprint import pprint
+
+        def path_leaf(path):
+            head, tail = ntpath.split(path)
+            return tail or ntpath.basename(head)
+
+        @contextmanager
+        def stdout_redirected(new_stdout):
+            save_stdout = sys.stdout
+            sys.stdout = new_stdout
+            try:
+                yield None
+            finally:
+                sys.stdout = save_stdout
+
+        data_name = "data_" + path_leaf(self.gui.builder.get_object("algoFileChooser").get_preview_filename())
+        data_dict = self.dataProcessor.__dict__
+        with open(data_name + ".txt", "w") as f:
+            with stdout_redirected(f): # TODO add csv output
+                pprint(data_dict)
+        import code; code.interact(local=dict(globals(), **locals()))
+
+from matplotlib.pyplot import plot, xlabel, ylabel, title, legend, show, ylim, xticks
+c = data_dict['cont_c']
+plot(range(len(c)), c, label = "Continuous C Approximation", marker = "o", linestyle = "--",)
+ylim([-5, 125])
+xlabel("n Value")
+ylabel("C approximations calculated around n")
+title("C approximations for the continuous case of Log2")
+xticks(range(0,len(c),5))
+show()
+################################
+for i in range(0, data_dict['endTerm']):
+    if data_dict.get('aroundDiscontinuities'):
+        (e,p,c) = (data_dict['cont_e'][i],data_dict['cont_p'][i],data_dict['cont_c'][i]) if data_dict['hasLog'] else (data_dict['cont_enl'][i],data_dict['cont_pnl'][i],data_dict['cont_cnl'][i])
+    else:
+        (e,p,c) = (data_dict['e'][i],data_dict['p'][i],data_dict['c'][i]) if data_dict['hasLog'] else (data_dict['enl'][i],data_dict['pnl'][i],data_dict['cnl'][i])
+    print "="*20
+    print i, data_dict['hasLog'], data_dict.get('aroundDiscontinuities')
+    print "e=", e
+    print "p=", p
+    print "c=", c
+    print "a=", data_dict['a'][i]
+    try: 
+        print e ** i * i ** p * c
+        print data_dict['c'][i-1] <= c <= data_dict['c'][i+1]
+    except Exception as e:
+        print "0", e        
+        """
+###############################################################################
     
     def graph(self, widget):
         try:

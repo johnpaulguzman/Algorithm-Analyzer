@@ -162,12 +162,8 @@ class DataProcessor:
         while n < self.endTerm:
             try:
                 print "Checking for discontinuity before the {}th epc approximations".format(n)
-                if((self.e[n]-self.e[n-1]).copy_abs() < (self.e[n+1]-self.e[n]).copy_abs() and
-                   (self.p[n]-self.p[n-1]).copy_abs() < (self.p[n+1]-self.p[n]).copy_abs() and
-                   (self.c[n]-self.c[n-1]).copy_abs() < (self.c[n+1]-self.c[n]).copy_abs() and
-                   (self.e[n]-self.e[n+1]).copy_abs() + (self.p[n]-self.p[n+1]).copy_abs() +
-                   (self.c[n]-self.c[n+1]).copy_abs() > 1.0):
-                    self.discontinuities += [n+1]
+                if not -(self.c[n+1]-self.c[n-1]).copy_abs() <= self.c[n] <= self.c[n-1]+self.c[n+1]:
+                    self.discontinuities += [n]
                     n += 2 #skip the rest of discontinuous approximations
             except Exception, e: #If no reasonable value could be calculated, ignore approximation
                 print Messages.ERR_MATH_IGNORE, e

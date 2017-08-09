@@ -6,5 +6,4 @@ def insertion_sort(items):
             j -= 1
 
 def f(n): #insertion sort worst case
-    x = range(n,0,-1)
-    insertion_sort(x)
+    insertion_sort(range(n,0,-1))

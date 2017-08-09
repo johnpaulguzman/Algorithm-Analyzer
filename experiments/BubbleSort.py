@@ -5,5 +5,4 @@ def bubble_sort(items):
                 items[j], items[j+1] = items[j+1], items[j]  
 
 def f(n): #bubble sort worst case
-    x = range(n,0,-1)
-    bubble_sort(x)
+    bubble_sort(range(n,0,-1))
